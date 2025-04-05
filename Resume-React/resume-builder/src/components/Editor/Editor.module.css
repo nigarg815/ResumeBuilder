@@ -1,0 +1,203 @@
+.container {
+  background-color: #fefefe;
+  color: #333;
+  min-width: 300px;
+  min-height: 450px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  height: fit-content;
+  margin: 20px auto;
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.header {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+}
+
+.header::-webkit-scrollbar {
+  height: 7px;
+}
+
+.header::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #c7c7c7;
+}
+
+.header .section {
+  padding: 10px 20px;
+  border-bottom: 2px solid transparent;
+  font-weight: 500;
+  font-size: 1rem;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header .section:hover {
+  background-color: #e9e9e9;
+}
+
+.header .active {
+  border-bottom: 2px solid #239ce2;
+  color: #239ce2;
+  background-color: #eef7ff;
+  font-weight: bold;
+}
+
+.body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.detail .row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* Responsive adjustments for row elements */
+}
+
+.detail .column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail .row > div {
+  flex: 1;
+  min-width: 100px; /* Ensures columns have a minimum width */
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+}
+
+.chips .new {
+  color: #239ce2;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-color: #eef7ff;
+  padding: 6px 12px;
+  border-radius: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.chips .new:hover {
+  background-color: #d6eaff;
+}
+
+.chip {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 4px 10px;
+  background-color: #808080;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chip:hover {
+  background-color: #696969;
+}
+
+.chip p {
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: #fff;
+}
+
+.chip svg {
+  color: #fff;
+  height: 18px;
+  width: 18px;
+}
+
+.chips .active {
+  background-color: #239ce2;
+}
+
+.body button {
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #239ce2;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+.body button:hover {
+  background-color: #1b7fbf;
+}
+
+.body button:active {
+  transform: translateY(2px);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .header {
+    justify-content: flex-start;
+    padding-bottom: 8px;
+  }
+
+  .header .section {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .body {
+    padding: 15px;
+  }
+
+  .detail .row {
+    flex-direction: column; /* Stack columns vertically on smaller screens */
+  }
+
+  .detail .row > div {
+    width: 100%;
+  }
+}
